@@ -1,2 +1,2 @@
-# xaktu-website
-Minimal CSS/JS library for websites
+# Xaktu Website
+Minimal CSS/JS library for Websites
