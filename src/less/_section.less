@@ -1,0 +1,73 @@
+/*------------------------------------------------------------------------------
+| SECTION
+| ----------------------------------------------------------------------------*/
+
+.section {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding: var(--section-padding);
+    width: 100%;
+
+    .container {
+        margin: auto;
+        max-width: var(--section-container-max-width);
+        position: relative;
+        width: var(--section-container-width);
+        z-index: 10;
+    }
+}
+
+.row:not(:last-child) {
+    margin-bottom: var(--row-gap);
+}
+
+.section.overlay {
+    &::before {
+        background-color: var(--overlay-background-color);
+        content: "";
+        left: 0;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 2;
+    }
+}
+
+.spacer {
+    height: var(--spacer-height);
+}
+
+.element-bg {
+    bottom: 0;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    overflow: hidden;
+    width: 100%;
+    z-index: 1;
+
+    img, video {        
+        min-width: 100%;
+        min-height: 100%;
+        position: absolute;
+        top: -9999px;
+        bottom: -9999px;
+        left: -9999px;
+        right: -9999px;
+        margin: auto;
+     
+        @media (min-aspect-ratio: ~"16/9") {
+            height: auto;
+            width: 100%;
+        }
+        @media (max-aspect-ratio: ~"16/9") {
+            height: 100%;
+            width: auto !important;
+        }
+    }
+    img {
+        max-width: unset;
+    }
+}
